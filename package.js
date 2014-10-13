@@ -1,11 +1,11 @@
 Package.describe({
-  name: "raix:grounddb",
+  name: "rtnpro:grounddb",
   version: "0.1.4",
   summary: "Ground Meteor.Collections offline",
-  git: "https://github.com/GroundMeteor/Meteor-GroundDB.git"
+  git: "https://github.com/waartaa/Meteor-GroundDB.git"
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
   "use strict";
   api.export && api.export('GroundDB');
   api.export && api.export('_gDB', ['client', 'server'], {testOnly: true});
@@ -23,16 +23,16 @@ Package.on_use(function (api) {
   api.use(['deps@1.0.0'], 'client');
   //api.use([], 'server');
   //api.use(['localstorage', 'ejson'], 'client');
-  api.add_files('groundDB.client.js', 'client');
-  api.add_files('groundDB.server.js', 'server');
+  api.addFiles('groundDB.client.js', 'client');
+  api.addFiles('groundDB.server.js', 'server');
 });
 
-Package.on_test(function (api) {
-  api.use('raix:grounddb', ['client']);
+Package.onTest(function (api) {
+  api.use('rtnpro:grounddb', ['client']);
   api.use('test-helpers', 'client');
   api.use(['tinytest', 'underscore', 'ejson', 'ordered-dict',
            'random', 'deps']);
 
-  api.add_files('groundDB.client.tests.js', 'client');
-  api.add_files('groundDB.server.tests.js', 'server');
+  api.addFiles('groundDB.client.tests.js', 'client');
+  api.addFiles('groundDB.server.tests.js', 'server');
 });
